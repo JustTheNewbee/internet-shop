@@ -25,7 +25,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Shop\\Core\\": "packages/shop-core/src/"
+            "ShopCore\\": "packages/shop-core/src/"
         }
     },
     "autoload-dev": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Shop\Core\DomainQueries\Product;
+namespace ShopCore\DomainQueries\Product;
 
 class ProductFilter
 {

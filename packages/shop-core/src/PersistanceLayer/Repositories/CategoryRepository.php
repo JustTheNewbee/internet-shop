@@ -1,8 +1,8 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\Repositories;
+namespace ShopCore\PersistanceLayer\Repositories;
 
-use Shop\Core\PersistanceLayer\Models\Category;
+use ShopCore\PersistanceLayer\Models\Category;
 
 class CategoryRepository
 {

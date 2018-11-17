@@ -1,6 +1,6 @@
 <?php
 
-namespace Shop\Core\Contracts;
+namespace ShopCore\Contracts;
 
 interface ToValueObjectInterface
 {

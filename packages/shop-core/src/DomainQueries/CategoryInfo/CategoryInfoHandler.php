@@ -1,11 +1,10 @@
 <?php
 
-namespace ShopCore\DomainQueries\Category;
+namespace ShopCore\DomainQueries\CategoryInfo;
 
-use ShopCore\PersistanceLayer\Models\Category;
 use ShopCore\PersistanceLayer\QueryBuilders\CategoryQueryBuilder;
 
-class CategoryHandler
+class CategoryInfoHandler
 {
     /**
      * @var CategoryQueryBuilder
@@ -13,7 +12,7 @@ class CategoryHandler
     private $categoryQueryBuilder;
 
     /**
-     * CategoryHandler constructor.
+     * CategoryInfoHandler constructor.
      * @param CategoryQueryBuilder $categoryQueryBuilder
      */
     public function __construct(CategoryQueryBuilder $categoryQueryBuilder)
@@ -22,15 +21,15 @@ class CategoryHandler
     }
 
     /**
+     * @param int $id
      * @return array
      * @throws \Exception
      */
-    public function getCategories(): array
+    public function getCategoryById(int $id): array
     {
         $query = $this->categoryQueryBuilder->newQuery();
+        $query->filterById($id);
 
-        return array_map(function (Category $category) {
-            return new CategoryResult($category->toValueObject());
-        }, $query->getQuery()->get()->all());
+        return (new CategoryInfoResult($query->getQuery()->first()->toValueObject()))->toArray();
     }
 }

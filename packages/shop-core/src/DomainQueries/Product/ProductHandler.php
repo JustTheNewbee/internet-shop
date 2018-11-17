@@ -1,9 +1,9 @@
 <?php
 
-namespace Shop\Core\DomainQueries\Product;
+namespace ShopCore\DomainQueries\Product;
 
-use Shop\Core\PersistanceLayer\Models\Product;
-use Shop\Core\PersistanceLayer\QueryBuilders\ProductQueryBuilder;
+use ShopCore\PersistanceLayer\Models\Product;
+use ShopCore\PersistanceLayer\QueryBuilders\ProductQueryBuilder;
 
 class ProductHandler
 {

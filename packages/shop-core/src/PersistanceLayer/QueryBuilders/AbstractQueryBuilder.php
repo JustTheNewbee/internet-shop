@@ -1,6 +1,6 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\QueryBuilders;
+namespace ShopCore\PersistanceLayer\QueryBuilders;
 
 use Illuminate\Database\Eloquent\Builder;
 

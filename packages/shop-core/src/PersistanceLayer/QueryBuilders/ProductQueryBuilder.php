@@ -1,8 +1,8 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\QueryBuilders;
+namespace ShopCore\PersistanceLayer\QueryBuilders;
 
-use Shop\Core\PersistanceLayer\Models\Product;
+use ShopCore\PersistanceLayer\Models\Product;
 
 class ProductQueryBuilder extends AbstractQueryBuilder
 {

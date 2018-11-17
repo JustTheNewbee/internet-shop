@@ -1,10 +1,15 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\QueryBuilders;
+namespace ShopCore\PersistanceLayer\QueryBuilders;
 
-use Shop\Core\PersistanceLayer\Models\Category;
+use ShopCore\PersistanceLayer\Models\Category;
 
 class CategoryQueryBuilder extends AbstractQueryBuilder
 {
     const MODEL = Category::class;
+
+    public function filterById(int $id): void
+    {
+        $this->getQuery()->where(Category::TABLE . '.' . Category::ID, $id);
+    }
 }

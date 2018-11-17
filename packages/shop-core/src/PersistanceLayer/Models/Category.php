@@ -1,9 +1,9 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\Models;
+namespace ShopCore\PersistanceLayer\Models;
 
 use Carbon\Carbon;
-use Shop\Core\PersistanceLayer\ValueObjects\Category as CategoryObject;
+use ShopCore\PersistanceLayer\ValueObjects\Category as CategoryObject;
 
 class Category extends BaseModel
 {

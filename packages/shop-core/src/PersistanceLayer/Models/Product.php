@@ -1,9 +1,9 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\Models;
+namespace ShopCore\PersistanceLayer\Models;
 
 use Carbon\Carbon;
-use Shop\Core\PersistanceLayer\ValueObjects\Product as ProductObject;
+use ShopCore\PersistanceLayer\ValueObjects\Product as ProductObject;
 
 class Product extends BaseModel
 {

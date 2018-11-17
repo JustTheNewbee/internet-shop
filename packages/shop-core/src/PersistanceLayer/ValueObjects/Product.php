@@ -1,12 +1,10 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\ValueObjects;
+namespace ShopCore\PersistanceLayer\ValueObjects;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Support\Arrayable;
-use Shop\Core\PersistanceLayer\Models\Product as ProductModel;
 
-class Product implements Arrayable
+class Product
 {
     /**
      * @var int
@@ -163,19 +161,5 @@ class Product implements Arrayable
     public function getDeletedAt(): ?Carbon
     {
         return $this->deletedAt;
-    }
-
-    /**
-     * @return array
-     */
-    public function toArray()
-    {
-        return [
-            ProductModel::ID => $this->getId(),
-            ProductModel::NAME => $this->getName(),
-            ProductModel::DESCRIPTION => $this->getDescription(),
-            ProductModel::PRICE => $this->getPrice(),
-            ProductModel::QUANTITY => $this->getQuantity(),
-        ];
     }
 }

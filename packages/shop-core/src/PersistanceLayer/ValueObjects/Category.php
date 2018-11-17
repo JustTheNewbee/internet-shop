@@ -1,12 +1,10 @@
 <?php
 
-namespace Shop\Core\PersistanceLayer\ValueObjects;
+namespace ShopCore\PersistanceLayer\ValueObjects;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Support\Arrayable;
-use Shop\Core\PersistanceLayer\Models\Category as CategoryModel;
 
-class Category implements Arrayable
+class Category
 {
     /**
      * @var int
@@ -134,20 +132,4 @@ class Category implements Arrayable
     {
         return $this->deletedAt;
     }
-
-    /**
-     * @return array
-     */
-    public function toArray(): array
-    {
-        return [
-            CategoryModel::ID => $this->getId(),
-            CategoryModel::NAME => $this->getName(),
-            CategoryModel::DESCRIPTION => $this->getDescription(),
-            CategoryModel::KEY => $this->getKey(),
-            CategoryModel::IS_ACTIVE => $this->isActive(),
-        ];
-    }
-
-
 }
