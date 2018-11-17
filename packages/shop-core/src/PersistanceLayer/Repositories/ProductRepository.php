@@ -64,9 +64,23 @@ class ProductRepository
 
     /**
      * @param int $productId
+     * @throws \Exception
      */
     public function delete(int $productId): void
     {
         Product::query()->find($productId)->delete();
+    }
+
+    /**
+     * @param int $productId
+     * @param int $quantity
+     */
+    public function updateQuantity(int $productId, int $quantity): void
+    {
+        Product::query()
+            ->find($productId)
+            ->update([
+                Product::QUANTITY => $quantity
+            ]);
     }
 }

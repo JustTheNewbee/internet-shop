@@ -35,7 +35,6 @@ class CategoryController extends Controller
         $this->categoryHandler = $categoryHandler;
     }
 
-
     /**
      * @return JsonResponse
      * @throws \Exception

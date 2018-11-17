@@ -28,7 +28,7 @@ class ProductInfoHandler
     public function getCategoryById(int $id): array
     {
         $query = $this->productQueryBuilder->newQuery();
-        $query->filterById($id);
+        $query->filterByIds([$id]);
 
         return (new ProductInfoResult($query->getQuery()->first()->toValueObject()))->toArray();
     }
