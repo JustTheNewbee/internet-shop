@@ -17,7 +17,7 @@ class Category
     private $name;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $description;
 
@@ -50,15 +50,23 @@ class Category
      * Category constructor.
      * @param int $id
      * @param string $name
-     * @param string $description
+     * @param string|null $description
      * @param string $key
      * @param bool $isActive
      * @param Carbon|null $createdAt
      * @param Carbon|null $updatedAt
      * @param Carbon|null $deletedAt
      */
-    public function __construct(int $id, string $name, string $description, string $key, bool $isActive, ?Carbon $createdAt, ?Carbon $updatedAt, ?Carbon $deletedAt)
-    {
+    public function __construct(
+        int $id,
+        string $name,
+        ?string $description,
+        string $key,
+        bool $isActive,
+        ?Carbon $createdAt,
+        ?Carbon $updatedAt,
+        ?Carbon $deletedAt
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
@@ -86,9 +94,9 @@ class Category
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
