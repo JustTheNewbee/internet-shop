@@ -25,7 +25,7 @@ class ProductInfoHandler
      * @return array
      * @throws \Exception
      */
-    public function getCategoryById(int $id): array
+    public function getProductById(int $id): array
     {
         $query = $this->productQueryBuilder->newQuery();
         $query->filterByIds([$id]);

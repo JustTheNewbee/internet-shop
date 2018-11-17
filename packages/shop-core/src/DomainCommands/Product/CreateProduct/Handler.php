@@ -31,7 +31,7 @@ class Handler
             $command->getPrice(),
             $command->getQuantity(),
             $command->getCategoryId(),
-            $command->isActive()
+            intval($command->isActive())
         );
     }
 }

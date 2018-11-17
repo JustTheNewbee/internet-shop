@@ -1,0 +1,18 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Category",
+            "description": "Category description",
+            "key": "category",
+            "is_active": 1
+        },
+        {
+            "id": 2,
+            "name": "Category 2",
+            "description": "Category description 2",
+            "key": "category_2",
+            "is_active": 1
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Test",
+            "description": "Test description",
+            "key": "test",
+            "is_active": 1
+        }
+    ]
+}

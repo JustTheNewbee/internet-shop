@@ -47,6 +47,7 @@ class CategoryRepository
 
     /**
      * @param int $categoryId
+     * @throws \Exception
      */
     public function delete(int $categoryId): void
     {
