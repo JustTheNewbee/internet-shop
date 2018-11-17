@@ -29,7 +29,7 @@ class Handler
             $command->getName(),
             $command->getDescription(),
             $command->getKey(),
-            $command->isActive()
+            intval($command->isActive())
         );
     }
 }

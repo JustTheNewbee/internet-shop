@@ -80,7 +80,7 @@ class ProductController extends Controller
      */
     public function show(int $id): JsonResponse
     {
-        return response()->json($this->productInfoHandler->getCategoryById($id));
+        return response()->json($this->productInfoHandler->getProductById($id));
     }
 
     /**
