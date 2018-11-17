@@ -16,4 +16,13 @@ class ProductQueryBuilder extends AbstractQueryBuilder
     {
         $this->getQuery()->whereIn(Product::TABLE . '.' . Product::CATEGORY_ID, $categoryIds);
     }
+
+    /**
+     * @param int $id
+     * @throws \Exception
+     */
+    public function filterById(int $id): void
+    {
+        $this->getQuery()->where(Product::TABLE . '.' . Product::ID, $id);
+    }
 }

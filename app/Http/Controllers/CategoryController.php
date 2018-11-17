@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use ShopCore\DomainCommands\Category\CreateCategory\CreateCategoryCommand;
 use ShopCore\DomainCommands\Category\DeleteCategory\DeleteCategoryCommand;
 use ShopCore\DomainCommands\Category\UpdateCategory\UpdateCategoryCommand;
@@ -35,7 +34,7 @@ class CategoryController extends Controller
             $request->get(CategoryRequest::NAME),
             $request->get(CategoryRequest::DESCRIPTION),
             $request->get(CategoryRequest::KEY),
-            $request->get(CategoryRequest::IS_ACTIVE)
+            $request->get(CategoryRequest::IS_ACTIVE) ? true : false
         ));
     }
 
@@ -60,7 +59,7 @@ class CategoryController extends Controller
             $request->get(CategoryRequest::NAME),
             $request->get(CategoryRequest::DESCRIPTION),
             $request->get(CategoryRequest::KEY),
-            $request->get(CategoryRequest::IS_ACTIVE)
+            $request->get(CategoryRequest::IS_ACTIVE) ? true : false
         ));
     }
 

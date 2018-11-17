@@ -3,6 +3,7 @@
 namespace ShopCore\PersistanceLayer\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use ShopCore\PersistanceLayer\ValueObjects\Product as ProductObject;
 
 class Product extends BaseModel
@@ -28,6 +29,11 @@ class Product extends BaseModel
         self::IS_ACTIVE,
     ];
 
+    public function category(): HasOne
+    {
+        return $this->hasOne(Category::class, 'id', 'category_id');
+    }
+
     /**
      * @return ProductObject
      */
@@ -43,7 +49,8 @@ class Product extends BaseModel
             $this->isActive === 0 ? false : true,
             $this->createdAt ? new Carbon($this->createdAt) : null,
             $this->updatedAt ? new Carbon($this->updatedAt) : null,
-            $this->deletedAt ? new Carbon($this->deletedAt) : null
+            $this->deletedAt ? new Carbon($this->deletedAt) : null,
+            $this->category ? $this->category->toValueObject() : null
         );
     }
 }

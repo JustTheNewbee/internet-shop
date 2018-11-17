@@ -57,6 +57,11 @@ class Product
     private $deletedAt;
 
     /**
+     * @var Category|null
+     */
+    private $category;
+
+    /**
      * Product constructor.
      * @param int $id
      * @param string $name
@@ -68,9 +73,21 @@ class Product
      * @param Carbon|null $createdAt
      * @param Carbon|null $updatedAt
      * @param Carbon|null $deletedAt
+     * @param null|Category $category
      */
-    public function __construct(int $id, string $name, string $description, ?float $price, int $quantity, ?int $categoryId, bool $isActive, ?Carbon $createdAt, ?Carbon $updatedAt, ?Carbon $deletedAt)
-    {
+    public function __construct(
+        int $id,
+        string $name,
+        string $description,
+        ?float $price,
+        int $quantity,
+        ?int $categoryId,
+        bool $isActive,
+        ?Carbon $createdAt,
+        ?Carbon $updatedAt,
+        ?Carbon $deletedAt,
+        ?Category $category
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
@@ -81,7 +98,9 @@ class Product
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->deletedAt = $deletedAt;
+        $this->category = $category;
     }
+
 
     /**
      * @return int
@@ -161,5 +180,13 @@ class Product
     public function getDeletedAt(): ?Carbon
     {
         return $this->deletedAt;
+    }
+
+    /**
+     * @return null|Category
+     */
+    public function getCategory(): ?Category
+    {
+        return $this->category;
     }
 }

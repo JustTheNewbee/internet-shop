@@ -22,7 +22,7 @@ class CreateCategoryCommand
     private $key;
 
     /**
-     * @var int|null
+     * @var bool|null
      */
     private $isActive;
 
@@ -33,7 +33,7 @@ class CreateCategoryCommand
      * @param string $key
      * @param bool|null $isActive
      */
-    public function __construct(string $name, ?string $description, string $key, ?int $isActive)
+    public function __construct(string $name, ?string $description, string $key, ?bool $isActive)
     {
         $this->name = $name;
         $this->description = $description;
