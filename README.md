@@ -16,4 +16,6 @@ Internet shop with api
 | PUT | api/products/{productId} | <ul><li>productId &ndash; product id from `products` table</li><li> name* &ndash; product name;</li><li> description &ndash; product description;</li><li>price* &ndash; price per unit;</li><li>quantity* &ndash; quantity of exist products</li><li>category_id - category of product</li><li>is_active &ndash; product "on/off" status </li></ul> | Updates product by id. Request has same validation as create product |
 | DELETE | api/products/{productId} |  productId &ndash; product id from `products` table | Soft remove product by id |
 | POST | api/order | <ul><li>product_id* - id of ordering product</li><li>quantity* - quantity if ordering product position</li></ul> | Makes order for product if product exist, active and has price
+ 
+ 
  *\* - required parameters<br>For testing PUT or DELETE method you can use POST request with additional body parameter **_method=PUT** or **_method=DELETE** accordingly.*
