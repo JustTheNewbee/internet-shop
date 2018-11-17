@@ -32,3 +32,5 @@ Route::group(['prefix' => 'products'], function () {
     Route::put('/{productId}', 'ProductController@update')->where('productId', '[0-9]+')->name('products.update');
     Route::delete('/{productId}', 'ProductController@destroy')->where('productId', '[0-9]+')->name('products.destroy');
 });
+
+Route::post('order', 'OrderController@makeOrder');

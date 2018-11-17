@@ -46,10 +46,10 @@ class Product extends BaseModel
             $this->price,
             $this->quantity,
             $this->category_id,
-            $this->isActive === 0 ? false : true,
-            $this->createdAt ? new Carbon($this->createdAt) : null,
-            $this->updatedAt ? new Carbon($this->updatedAt) : null,
-            $this->deletedAt ? new Carbon($this->deletedAt) : null,
+            boolval($this->is_active),
+            $this->created_at ? new Carbon($this->created_at) : null,
+            $this->updated_at ? new Carbon($this->updated_at) : null,
+            $this->deleted_at ? new Carbon($this->deleted_at) : null,
             $this->category ? $this->category->toValueObject() : null
         );
     }

@@ -17,7 +17,7 @@ class Product
     private $name;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $description;
 
@@ -78,7 +78,7 @@ class Product
     public function __construct(
         int $id,
         string $name,
-        string $description,
+        ?string $description,
         ?float $price,
         int $quantity,
         ?int $categoryId,

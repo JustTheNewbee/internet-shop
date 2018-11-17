@@ -7,6 +7,11 @@ class ProductFilter
     /**
      * @var array|null
      */
+    private $productIds;
+
+    /**
+     * @var array|null
+     */
     private $categoryIds;
 
     /**
@@ -23,5 +28,21 @@ class ProductFilter
     public function setCategoryIds(array $categoryIds): void
     {
         $this->categoryIds = $categoryIds;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getProductIds(): ?array
+    {
+        return $this->productIds;
+    }
+
+    /**
+     * @param array|null $productIds
+     */
+    public function setProductIds(array $productIds): void
+    {
+        $this->productIds = $productIds;
     }
 }

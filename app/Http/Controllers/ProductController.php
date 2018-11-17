@@ -37,12 +37,17 @@ class ProductController extends Controller
         $this->productHandler = $productHandler;
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     * @throws \Exception
+     */
     public function index(Request $request): JsonResponse
     {
         return response()->json($this->productHandler->getProducts($this->getProductDomainFilter($request)));
     }
 
-    public function getProductDomainFilter(Request $request): ProductFilter
+    private function getProductDomainFilter(Request $request): ProductFilter
     {
         $filter = new ProductFilter();
 
