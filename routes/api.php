@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'categories'], function () {
+    Route::get('/', 'CategoryController@index')->name('categories.index');
     Route::get('/{categoryId}', 'CategoryController@show')->where('categoryId', '[0-9]+')->name('categories.show');
     Route::post('/', 'CategoryController@store')->name('categories.store');
     Route::put('/{categoryId}', 'CategoryController@update')->where('categoryId', '[0-9]+')->name('categories.update');
@@ -25,6 +26,7 @@ Route::group(['prefix' => 'categories'], function () {
 });
 
 Route::group(['prefix' => 'products'], function () {
+    Route::get('/', 'ProductController@index')->name('products.index');
     Route::get('/{productId}', 'ProductController@show')->where('productId', '[0-9]+')->name('products.show');
     Route::post('/', 'ProductController@store')->name('products.store');
     Route::put('/{productId}', 'ProductController@update')->where('productId', '[0-9]+')->name('products.update');

@@ -24,7 +24,7 @@ class ProductHandler
     public function getProducts(ProductFilter $filter): array
     {
         return array_map(function (Product $product) {
-            return $product->toValueObject()->toArray();
+            return (new ProductResult($product->toValueObject()))->toArray();
         }, $this->getQuery($filter)->getQuery()->get()->all());
     }
 

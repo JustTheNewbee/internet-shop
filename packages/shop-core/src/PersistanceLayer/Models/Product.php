@@ -45,7 +45,7 @@ class Product extends BaseModel
             $this->description,
             $this->price,
             $this->quantity,
-            $this->categoryId,
+            $this->category_id,
             $this->isActive === 0 ? false : true,
             $this->createdAt ? new Carbon($this->createdAt) : null,
             $this->updatedAt ? new Carbon($this->updatedAt) : null,

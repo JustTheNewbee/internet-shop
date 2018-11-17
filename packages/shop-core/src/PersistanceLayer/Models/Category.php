@@ -34,7 +34,7 @@ class Category extends BaseModel
             $this->name,
             $this->description,
             $this->key,
-            $this->is_active == 0 ? false : true,
+            boolval($this->is_active),
             $this->created_at ? new Carbon($this->created_at) : null,
             $this->updated_at ? new Carbon($this->updated_at) : null,
             $this->deleted_at ? new Carbon($this->deleted_at) : null

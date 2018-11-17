@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use ShopCore\DomainCommands\Product\CreateProduct\CreateProductCommand;
 use ShopCore\DomainCommands\Product\DeleteProduct\DeleteProductCommand;
 use ShopCore\DomainCommands\Product\UpdateProduct\UpdateProductCommand;
+use ShopCore\DomainQueries\Product\ProductFilter;
+use ShopCore\DomainQueries\Product\ProductHandler;
 use ShopCore\DomainQueries\ProductInfo\ProductInfoHandler;
 
 class ProductController extends Controller
@@ -17,12 +20,37 @@ class ProductController extends Controller
     private $productInfoHandler;
 
     /**
+     * @var ProductHandler
+     */
+    private $productHandler;
+
+    /**
      * ProductController constructor.
      * @param ProductInfoHandler $productInfoHandler
+     * @param ProductHandler $productHandler
      */
-    public function __construct(ProductInfoHandler $productInfoHandler)
-    {
+    public function __construct(
+        ProductInfoHandler $productInfoHandler,
+        ProductHandler $productHandler
+    ) {
         $this->productInfoHandler = $productInfoHandler;
+        $this->productHandler = $productHandler;
+    }
+
+    public function index(Request $request): JsonResponse
+    {
+        return response()->json($this->productHandler->getProducts($this->getProductDomainFilter($request)));
+    }
+
+    public function getProductDomainFilter(Request $request): ProductFilter
+    {
+        $filter = new ProductFilter();
+
+        if ($request->has('category_id')) {
+            $filter->setCategoryIds([$request->get('category_id')]);
+        }
+
+        return $filter;
     }
 
     /**

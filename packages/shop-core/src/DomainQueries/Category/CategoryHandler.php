@@ -30,7 +30,7 @@ class CategoryHandler
         $query = $this->categoryQueryBuilder->newQuery();
 
         return array_map(function (Category $category) {
-            return new CategoryResult($category->toValueObject());
+            return (new CategoryResult($category->toValueObject()))->toArray();
         }, $query->getQuery()->get()->all());
     }
 }
